@@ -1,0 +1,57 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "MT Debug",
+            "type": "shell",
+            "command": "g++ -g -O0 ./parser_multi_thread.cpp -o parser_deb_mt",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "MT Release",
+            "type": "shell",
+            "command": "g++ -O3 -g -fno-exceptions ./parser_multi_thread.cpp -o parser_rel_mt",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "ST Debug",
+            "type": "shell",
+            "command": "g++ -g -O0 ./parser_single_thread.cpp -o parser_deb_st",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "ST Release",
+            "type": "shell",
+            "command": "g++ -O3 -g -fno-exceptions ./parser_single_thread.cpp -o parser_rel_st",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Compare Release",
+            "type": "shell",
+            "command": "g++ -O3 -g -fno-exceptions ./comparer.cpp -o comparer_rel",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
